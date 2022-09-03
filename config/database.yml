@@ -17,6 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: db
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -82,5 +85,3 @@ test:
 production:
   <<: *default
   database: habit_api_rails_production
-  username: habit_api_rails
-  password: <%= ENV["HABIT_API_RAILS_DATABASE_PASSWORD"] %>
