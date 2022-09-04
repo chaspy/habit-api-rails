@@ -1,5 +1,6 @@
 module Types
   class MutationType < Types::BaseObject
+    field :update_habit, mutation: Mutations::UpdateHabit
     field :create_habit, mutation: Mutations::CreateHabit
     # TODO: remove me
     field :test_field, String, null: false,
