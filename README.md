@@ -18,6 +18,15 @@ erDiagram
           HABIT ||--　o{ RECORD : record
 ```
 
+### Schema
+
+HABIT
+* name
+* user_id
+
+RECORD
+* date
+* habit_id
 
 ## local development
 
