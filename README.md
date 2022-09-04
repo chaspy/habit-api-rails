@@ -28,6 +28,69 @@ RECORD
 * date
 * habit_id
 
+## GraphQL example
+
+### Habit
+
+#### Get
+
+```
+query {
+  habit(id: "2") {
+    id
+    name
+    records {
+      id
+      date
+    }
+  }
+}
+```
+
+#### Create
+
+```
+mutation ($input: CreateHabitInput!) {
+  createHabit(input: $input) {
+    habit {
+      name
+    }
+  }
+}
+```
+
+```
+{
+  "input": {
+      "name": "ストレッチする"
+    }
+}
+```
+
+#### Update
+
+```
+mutation ($input: UpdateHabitInput!) {
+  updateHabit(input: $input) {
+    habit {
+      id
+      name
+    }
+  }
+}
+```
+
+```
+{
+  "input": {
+      "id": 2,
+      "name": "ビールを2リットル飲む"
+    }
+}
+```
+
+#### Delete
+
 ## local development
 
 ```
