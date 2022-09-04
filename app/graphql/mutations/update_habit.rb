@@ -1,14 +1,14 @@
 module Mutations
   class UpdateHabit < BaseMutation
-    field :habit, Types::HabitType, null: false
+    field :habit, Types::HabitType, null: true
 
-    argument :params, Types::Inputs::HabitInputType, required: true
+    argument :id,   Integer, required: true
+    argument :name, String,  required: true
 
-    def resolve(params:)
-      habit_params = params.to_h
-      habit = Habit.find(habit_params.delete(:id))
-      habit.update!(habit_params.compact)
-      habit
+    def resolve(**params)
+      habit = Habit.find(params[:id])
+      habit.update!(name: params[:name])
+      { habit: habit}
     end
   end
 end
