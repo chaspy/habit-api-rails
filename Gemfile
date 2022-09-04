@@ -8,6 +8,8 @@ gem "rails", "7.0.3.1"
 
 gem 'graphql', "2.0.13"
 
+gem 'rack-cors', "1.1.1"
+
 # Use postgresql as the database for Active Record
 gem "pg", "1.1"
 
