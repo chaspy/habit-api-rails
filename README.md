@@ -1,24 +1,26 @@
 # habit-rails-api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Design
 
-Things you may want to cover:
+### Feature
 
-* Ruby version
+* User は Google 認証によってログインできる
+* User は "習慣"を登録・編集・削除ができる
+* User は "習慣の記録"を登録・削除ができる
 
-* System dependencies
+### ER Diagram
 
-* Configuration
+```mermaid
+erDiagram
 
-* Database creation
+          USER ||--　o{ HABIT : add
+          USER ||--　o{ RECORD : add
+          HABIT ||--　o{ RECORD : record
+```
 
-* Database initialization
 
-* How to run the test suite
+## local development
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+docker-compose up
+```
