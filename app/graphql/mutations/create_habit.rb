@@ -1,14 +1,12 @@
 module Mutations
   class CreateHabit < BaseMutation
-    # TODO: define return fields
-    # field :post, Types::PostType, null: false
+    field: habit, Types::HabitType, null: false
 
-    # TODO: define arguments
-    # argument :name, String, required: true
+    argument :title, String, required: true
 
-    # TODO: define resolve method
-    # def resolve(name:)
-    #   { post: ... }
-    # end
+    def resolve(**params)
+      habit = Habit.create!(params)
+      { habit: habit }
+    end
   end
 end
