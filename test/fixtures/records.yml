@@ -2,6 +2,8 @@
 
 one:
   date: 2022-09-04
+  habit: one
 
 two:
   date: 2022-09-04
+  habit: two
