@@ -1,14 +1,12 @@
 module Mutations
   class UpdateHabit < BaseMutation
-    # TODO: define return fields
-    # field :post, Types::PostType, null: false
+    argument :params, Types::Inputs::HabitInputType, required: true
 
-    # TODO: define arguments
-    # argument :name, String, required: true
-
-    # TODO: define resolve method
-    # def resolve(name:)
-    #   { post: ... }
-    # end
+    def resolve(params:)
+      habit_params = params.to_h
+      habit = Habit.find(habit_params.delete(:id))
+      habit.update!(habit_params.compact)
+      habit
+    end
   end
 end
