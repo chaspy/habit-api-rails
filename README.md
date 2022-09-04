@@ -91,6 +91,24 @@ mutation ($input: UpdateHabitInput!) {
 
 #### Delete
 
+```
+mutation ($input: DeleteHabitInput!) {
+  deleteHabit(input: $input) {
+    habit {
+      id
+    }
+  }
+}
+```
+
+```
+{
+  "input": {
+      "id": 4
+    }
+}
+```
+
 ## local development
 
 ```
