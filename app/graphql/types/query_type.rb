@@ -13,5 +13,14 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :habit, Types::HabitType, null: false do
+      description 'Find a habit by ID'
+      argument :id, ID, required: true
+    end
+
+    def habit(id:)
+      Habit.find(id)
+    end
   end
 end
