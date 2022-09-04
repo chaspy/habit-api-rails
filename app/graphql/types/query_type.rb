@@ -14,13 +14,6 @@ module Types
       "Hello World!"
     end
 
-    field :habit, Types::HabitType, null: false do
-      description 'Find a habit by ID'
-      argument :id, ID, required: true
-    end
-
-    def habit(id:)
-      Habit.find(id)
-    end
+    field :habit, resolver: Resolvers::HabitResolver
   end
 end
