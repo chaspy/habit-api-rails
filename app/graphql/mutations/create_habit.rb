@@ -1,6 +1,6 @@
 module Mutations
   class CreateHabit < BaseMutation
-    field: habit, Types::HabitType, null: false
+    field :habit, Types::HabitType, null: false
 
     argument :title, String, required: true
 
