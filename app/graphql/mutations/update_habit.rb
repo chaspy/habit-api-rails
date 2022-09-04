@@ -1,5 +1,7 @@
 module Mutations
   class UpdateHabit < BaseMutation
+    field :habit, Types::HabitType, null: false
+
     argument :params, Types::Inputs::HabitInputType, required: true
 
     def resolve(params:)
